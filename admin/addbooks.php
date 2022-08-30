@@ -1,6 +1,9 @@
-<?php
+<?php 
+// session_start();
+include('datadase/security.php');
 include('includes/header.php'); 
 include('includes/navbar.php'); 
+
 ?>
 <div class="container-fluid">
 
@@ -9,6 +12,21 @@ include('includes/navbar.php');
 <div class="card-header py-3">
     <h5 class="m-0 font-weight-bold text-primary"> Add Book </h5>
   </div>
+  
+  <?php 
+    if (isset($_SESSION['success'])&& $_SESSION['success'] !='')
+    {
+        echo'<h2 class ="text-primary"> '.$_SESSION['success'].' </h2>';
+        unset($_SESSION['success']);
+
+    }
+    if (isset($_SESSION['status'])&& $_SESSION['status']!='')
+    {
+        echo'<h2 class ="text-primary"> '.$_SESSION['status'].' </h2>';
+        unset($_SESSION['status']);
+
+    }
+    ?>
 
   <div class="card-body">
 

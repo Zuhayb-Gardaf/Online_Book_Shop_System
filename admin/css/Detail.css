@@ -48,11 +48,11 @@
 	font-weight: 600;
 	transition: .4s linear;
   }
-  
+/*   
   .pricing-card:hover .pricing-card-header{
 	box-shadow: 0 0 0 26em #D67B22;
   }
-  
+   */
   .price{
 	font-size: 70px;
 	color: #D67B22;
@@ -64,11 +64,11 @@
 	font-size: 22px;
 	font-weight: 700;
   }
-  
+/*   
   .pricing-card:hover ,.pricing-card:hover .price {
 	color: #fff;
   }
-  
+   */
   .pricing-card li{
 	font-size: 16px;
 	padding: 10px 0;

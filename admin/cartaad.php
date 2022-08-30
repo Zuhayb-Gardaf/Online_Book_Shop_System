@@ -1,4 +1,5 @@
 <?php
+include('datadase/security.php');
 include('includes/header.php'); 
 include('includes/navbar.php'); 
 ?>
@@ -13,20 +14,6 @@ include('includes/navbar.php');
 
   <div class="card-body">
 
-    <?php 
-    if (isset($_SESSION['success'])&& $_SESSION['success'] !='')
-    {
-        echo'<h2 class ="bg-rpimary"> '.$_SESSION['success'].' </h2>';
-        unset($_SESSION['success']);
-
-    }
-    if (isset($_SESSION['status'])&& $_SESSION['status']!='')
-    {
-        echo'<h2 class ="bg-rpimary"> '.$_SESSION['status'].' </h2>';
-        unset($_SESSION['status']);
-
-    }
-    ?>
             <div class="table-responsive">
             <?php
             $connection = mysqli_connect("localhost","root","","bookstore");
@@ -40,6 +27,7 @@ include('includes/navbar.php');
                             <th> Product  </th>
                             <th>Quantity </th>
                             <th>Detail</th>
+                            <!-- <th>Delivery</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -55,11 +43,17 @@ include('includes/navbar.php');
                                 <td><?php  echo $row['Quantity']; ?></td>
                                 <td>
                                 <form action="Detail.php" method="post">
-                                        <input type="hidden" name="Detail_username" value="<?php echo $row['Customer']; ?>">
+                                        <input type="hidden" name="Detail_username" value="<?php echo $row['Username']; ?>">
                                         <button type="submit" name="Details_btn" class="btn btn-primary"> Details</button>
                                     </form>
                                 </td>
-                            
+                                <!-- <td>
+                                <form action="delivery.php" method="post">
+                                        <input type="hidden" name="Detail_username" value="<?php echo $row['Username']; ?>">
+                                        <button type="submit" name="Details_btn" class="btn btn-success">Delivery</button>
+                                    </form>
+                                </td>
+                             -->
                             </tr>
                         <?php
                             } 
@@ -72,7 +66,7 @@ include('includes/navbar.php');
                 </table>
 
             </div>
-        </div>
+        
     </div>
 
 </div>

@@ -1,4 +1,5 @@
 <?php
+include('datadase/security.php');
 include('includes/header.php'); 
 include('includes/navbar.php');
 ?>

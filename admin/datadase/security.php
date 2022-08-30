@@ -1,14 +1,15 @@
 <?php
 session_start();
-include('database/dbconfig.php');
+include('datadase/dbconfig.php');
 
 if($connection)
 {
     // echo "Database Connected";
+    
 }
 else
 {
-    header("Location: database/dbconfig.php");
+    header("Location: datadase/dbconfig.php");
 }
 if(!$_SESSION['username'])
 {

@@ -1,4 +1,5 @@
 <?php
+include('datadase/security.php');
 include('includes/header.php'); 
 include('includes/navbar.php'); 
 ?>
@@ -13,20 +14,7 @@ include('includes/navbar.php');
 
   <div class="card-body">
 
-    <?php 
-    if (isset($_SESSION['success'])&& $_SESSION['success'] !='')
-    {
-        echo'<h2 class ="bg-rpimary"> '.$_SESSION['success'].' </h2>';
-        unset($_SESSION['success']);
-
-    }
-    if (isset($_SESSION['status'])&& $_SESSION['status']!='')
-    {
-        echo'<h2 class ="bg-rpimary"> '.$_SESSION['status'].' </h2>';
-        unset($_SESSION['status']);
-
-    }
-    ?>
+ 
             <div class="table-responsive">
             <?php
             $connection = mysqli_connect("localhost","root","","bookstore");

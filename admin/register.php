@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('datadase/security.php');
 include('includes/header.php'); 
 include('includes/navbar.php'); 
 ?>
@@ -64,13 +64,13 @@ include('includes/navbar.php');
     <?php 
     if (isset($_SESSION['success'])&& $_SESSION['success'] !='')
     {
-        echo'<h2 class ="bg-rpimary"> '.$_SESSION['success'].' </h2>';
+        echo'<h2 class ="text-primary"> '.$_SESSION['success'].' </h2>';
         unset($_SESSION['success']);
 
     }
     if (isset($_SESSION['status'])&& $_SESSION['status']!='')
     {
-        echo'<h2 class ="bg-rpimary"> '.$_SESSION['status'].' </h2>';
+        echo'<h2 class ="text-primary"> '.$_SESSION['status'].' </h2>';
         unset($_SESSION['status']);
 
     }

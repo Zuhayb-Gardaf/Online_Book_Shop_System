@@ -1,4 +1,5 @@
 <?php
+include('datadase/security.php');
 include('includes/header.php'); 
 include('includes/navbar.php');
 ?>
@@ -11,7 +12,7 @@ include('includes/navbar.php');
   <title></title>
   <link rel="stylesheet" href="css/Detail.css">
 </head>
-<body class="home" style="text-decoration: none;">
+<body class="home" ">
   <div class="pricing-table">
     <div class="pricing-card">
       <h1 class="pricing-card-header">User </h1>
@@ -19,61 +20,53 @@ include('includes/navbar.php');
       <div class="card-body">
 
     
-<?php
-          $connection = mysqli_connect("localhost","root","","bookstore");
-           
-        if(isset($_POST['Detail_btn']))
-            {
-                $UserName = $_POST['Detail_username'];
-                
-                $query = "SELECT * FROM users WHERE UserName='$UserName' ";
+      <div class="table-responsive">
+            <?php
+            $connection = mysqli_connect("localhost","root","","bookstore");
+                $query = "SELECT * FROM users";
                 $query_run = mysqli_query($connection, $query);
-
-                foreach($query_run as $row)
-                {
-                    ?>
-
-                        <form action="detailcodde.php" method="POST">
-
-                        <div class="form-group">
-                                <label> Username </label>
-                                <input type="email" name="edit_username" value="<?php echo $row['UserName'] ?>" class="form-control"
-                                   readonly>
-                            </div>
-
-                            <div class="form-group">
-                                <label> Location </label>
-                                <input type="text" name="edit_Location" value="<?php echo $row['Location'] ?>" class="form-control"
-                                   readonly>
-                            </div>
-                            <div class="form-group">
-                                <label>Age</label>
-                                <input type="text" name="edit_Age" value="<?php echo $row['Age'] ?>" class="form-control"
-                                    placeholder="Enter Email" readonly>
-                            </div>
-                           <div class="form-group">
-                                <label> Gender </label>
-                                <input type="text" name="edit_Gender" value="<?php echo $row['Gender'] ?>" class="form-control"
-                                     readonly>
-                            </div>
-                             <div class="form-group">
-                                <label>Password</label>
-                                <input type="text" name="edit_Password" value="<?php echo $row['Password'] ?>"
-                                    class="form-control" readonly>
-                            </div>
-                            
-
-                            <a href="cartaad.php" class="btn btn-danger"> Decline </a>
-                            <button type="submit" name="updatebtn1" class="btn btn-primary"> Accept </button>
-
-                        </form>
+            ?>
+                <table class="table table-bordered" id="dataTable" width="80%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th> Username </th>
+                            <th> Location </th>
+                            <th> Age </th>
+                            <th> Gender </th>
+                            <th> Password </th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         <?php
-                }
-            }
-        ?>
+                        if(mysqli_num_rows($query_run) > 0)        
+                        {
+                            while($row = mysqli_fetch_assoc($query_run))
+                            {
+                        ?>
+                            <tr>
+                                <td><?php  echo $row['UserName']; ?></td>
+                                <td><?php  echo $row['Location']; ?></td>
+                                <td><?php  echo $row['Age']; ?></td>
+                                <td><?php  echo $row['Gender']; ?></td> 
+                                <td><?php  echo $row['Password']; ?></td>
+                            
+                            </tr>
+                        <?php
+                            } 
+                        }
+                        else {
+                            echo "No Record Found";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+               <a href="#" class="order-btn">Decline</a>
+               <a href="#" class="order-btn">Accpet</a>
+            </div>
+        </div>
        
     </div>
-      <a href="#" class="order-btn">Order Now</a>
+      
     </div>
 
     
@@ -85,57 +78,3 @@ include('includes/navbar.php');
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>
-
-
-<?php
-          $connection = mysqli_connect("localhost","root","","bookstore");
-           
-        if(isset($_POST['Detail_btn']))
-            {
-                $UserName = $_POST['Detail_username'];
-                
-                $query = "SELECT * FROM users WHERE UserName='$UserName' ";
-                $query_run = mysqli_query($connection, $query);
-
-                foreach($query_run as $row)
-                {
-                    ?>
-
-                        <form action="code.php" method="POST">
-
-                        <div class="form-group">
-                                <label> Username </label>
-                                <input type="email" name="edit_username" value="<?php echo $row['UserName'] ?>" class="form-control"
-                                   readonly>
-                            </div>
-
-                            <div class="form-group">
-                                <label> Location </label>
-                                <input type="text" name="edit_Location" value="<?php echo $row['Location'] ?>" class="form-control"
-                                   readonly>
-                            </div>
-                            <div class="form-group">
-                                <label>Age</label>
-                                <input type="text" name="edit_Age" value="<?php echo $row['Age'] ?>" class="form-control"
-                                    placeholder="Enter Email" readonly>
-                            </div>
-                           <div class="form-group">
-                                <label> Gender </label>
-                                <input type="text" name="edit_Gender" value="<?php echo $row['Gender'] ?>" class="form-control"
-                                     readonly>
-                            </div>
-                             <div class="form-group">
-                                <label>Password</label>
-                                <input type="text" name="edit_Password" value="<?php echo $row['Password'] ?>"
-                                    class="form-control" readonly>
-                            </div>
-                            
-
-                            <a href="cartaad.php" class="btn btn-danger"> decline </a>
-                            <button type="submit" name="updatebtn1" class="btn btn-primary"> Accept </button>
-
-                        </form>
-                        <?php
-                }
-            }
-        ?>

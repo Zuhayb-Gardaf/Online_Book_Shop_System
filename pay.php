@@ -150,44 +150,38 @@
           </div>
       </div>
 
-      
-    <!-- <div class="container-fluid">
+<!--       
+    <div class="container-fluid">
 <div class="row justify-content-center">
     <div class="col-12 col-lg-11">
         <div class="card card0 rounded-0">
             <div class="row">
-            <div class="col-md-5 d-md-block d-none p-0 box"> -->
-                <!-- <br>
+            <div class="col-md-5 d-md-block d-none p-0 box"> 
+                 <br>
                 <br>
                 <br>
-  --> <!--
+  
 						<div class="card rounded-0 border-0 card1" id="bill">
-							<h3 id="heading1">Payment Summary</h3>
+							
 							<div class="row">
 								<div class="col-lg-7 col-8 mt-4 line pl-4">
-									<h2 class="bill-head">Title</h2>
+                                <img class="img-responsive" alt="Brand" src="img/1.jpg"  style="width: 147px;margin: 0px;">
 
 								</div>
-								<div class="col-lg-5 col-4 mt-4">
-									<h2 class="bill-head px-xl-5 px-lg-4">CAF</h2>
-								</div>
+								<br>
+                <br>
 							</div>
 							<div class="row">
 								<div class="col-lg-7 col-8 mt-4 line pl-4">
-									<h2 class="bill-head">Code</h2>
-
+									<h2 class="bill-head">merchant No :</h2>
 								</div>
-								<div class="col-lg-5 col-4 mt-4">
-									<h2 class="bill-head px-xl-5 px-lg-4">JFK</h2>
-								</div>
+                                <br>
+                <br>
 							</div>
 							<div class="row">
-								<div class="col-lg-7 col-8 mt-4 line pl-4">
-									<h2 class="bill-head">Quantity </h2>
-	
-								</div>
-								<div class="col-lg-5 col-4 mt-4">
-									<h2 class="bill-head px-xl-5 px-lg-4">LHR</h2>
+								<div class="col-md-12 red-bg">
+									<h2 class="bill-date" id="total-label"> 445566</h2>
+								
 								</div>
 							</div>
 							<div class="row">
@@ -205,7 +199,14 @@
 								</div>
 							</div>
 						</div>
-					</div> -->
+					</div>  -->
+                    
+                <br>
+                <br>
+                    <img src="img/1.jpg"  style="margin-top: 50px; width: 270px">
+                
+                    <img  src="img/2.jpg"  style="margin-top: 50px; width: 280px">
+                    
                 <div class="col-md-7 col-sm-12 p-0 box">
                     <div class="card rounded-0 border-0 card2" id="paypage">
                         <div class="form-card">
